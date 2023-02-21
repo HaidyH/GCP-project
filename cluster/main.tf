@@ -13,9 +13,6 @@ resource "google_project_iam_member" "cluster-service-account-role" {
 }
 
 
-
-
-
 ########## GKE Cluster ########
 
 
@@ -79,7 +76,7 @@ resource "google_container_node_pool" "restricted_nodes" {
     
     tags = ["private-rules"]
     image_type   = "COS_CONTAINERD"
-    machine_type = "e2-micro"
+    machine_type = "e2-standard-2"
     service_account = google_service_account.gke_sa.email
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
