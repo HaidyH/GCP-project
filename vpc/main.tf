@@ -79,7 +79,7 @@ resource "google_compute_firewall" "block_internet_egress" {
 
 
 
-## The Secod rule define destnation ranges of google APIs to allow traffic
+## The 2nd rule define destnation ranges of google APIs to allow traffic
 resource "google_compute_firewall" "allow_google_apis_egress" {
   name = "allow-google-apis-egress"
   network = google_compute_network.main-vpc.name
@@ -92,11 +92,6 @@ resource "google_compute_firewall" "allow_google_apis_egress" {
   source_ranges = [var.restricted-subnet-cidr]
   target_tags   = ["private-rules"]
   direction     = "EGRESS"
-
-  destination_ranges = [
-    "*.googleusercontent.com",
-    "*.googleapis.com",
-  ]
 
   depends_on = [
     google_compute_subnetwork.restricted-subnet,
