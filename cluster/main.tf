@@ -50,6 +50,7 @@ resource "google_container_cluster" "restricted_cluster" {
       display_name = "management-subnet"
       cidr_block = "10.0.0.0/24"
     }
+
   }
     node_config {
     oauth_scopes = [

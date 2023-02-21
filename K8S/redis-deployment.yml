@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: gcr.io/ali-marwan-project/redis:7.0.8-alpine
+        image: gcr.io/haidyhossam-378515/redis
         resources:
           limits:
             memory: "128Mi"
